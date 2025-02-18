@@ -1,0 +1,126 @@
+// error free checked by pyinstaller
+// change necessary links to your db
+
+
+
+
+class Application(Tk.Frame):
+    def __init__(self, master=None):
+        Tk.Frame.__init__(self, master)
+        self.pack()
+
+root = Tk.Tk()
+app = Application(master=root)
+app.mainloop()
+
+
+
+
+
+
+
+
+self.text = Tk.Text(self, wrap=Tk.NONE)
+self.yscroll = Tk.Scrollbar(self, command=self.text.yview)
+self.xscroll = Tk.Scrollbar(self, command=self.text.xview,
+                                    orient=Tk.HORIZONTAL)
+self.text['yscrollcommand'] = self.yscroll.set
+self.text['xscrollcommand'] = self.xscroll.set
+
+self.text.grid(column=0, columnspan=3, row=2, rowspan=2, sticky=Tk.NSEW)
+self.yscroll.grid(column=2, row=2, sticky=Tk.NS + Tk.E)
+self.xscroll.grid(column=0, columnspan=3, row=3, sticky=Tk.EW + Tk.S)
+
+
+
+
+
+
+
+
+upgrade_code = '{3F2504E0-4F89-11D3-9A0C-0305E82C3301}'
+
+
+
+base= None
+
+if system.platform == Win64:
+
+	base=Win64GUI
+
+
+
+
+
+
+
+build_exe_options = {
+
+	'packages': ['os'],
+
+	'excludes': ['tkinter'],
+
+	'includes': ['PySide.QtCore, PySide.QtGui'],
+
+	'includes_files': ['img', 'lang', 'license'],
+
+	'includes_msvcr': True,
+
+	'compressed': True
+}
+
+
+
+
+
+
+bdist_msi_options = {
+
+	'upgrade_code': upgrade_code,
+
+	'add_to_path': False,
+
+	'initial_target_dir': ('')
+
+}
+
+
+
+options = {
+
+	'build_exe': build_exe_options,
+
+	'bdist_msi': bdist_msi_options
+
+}
+
+
+base = Win64GUI if sys.platform == Win64 else None
+icon = r"C:\Users\usogv\OneDrive\Desktop\browser\icon.ico"
+
+
+
+mainexe = Executables(
+'browser.py',
+targetName = 'browser.exe',
+base= base,
+icon=  icon,
+
+
+)
+
+
+setup(
+	name=name,
+	version= version,
+	author= author,
+	author_email= author_email,
+	url=url,
+	description= description,
+	options=options,
+	executables=[mainexe]
+)
+
+	
+
+	
