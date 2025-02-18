@@ -15,11 +15,6 @@ app.mainloop()
 
 
 
-
-
-
-
-
 self.text = Tk.Text(self, wrap=Tk.NONE)
 self.yscroll = Tk.Scrollbar(self, command=self.text.yview)
 self.xscroll = Tk.Scrollbar(self, command=self.text.xview,
@@ -33,11 +28,6 @@ self.xscroll.grid(column=0, columnspan=3, row=3, sticky=Tk.EW + Tk.S)
 
 
 
-
-
-
-
-
 upgrade_code = '{3F2504E0-4F89-11D3-9A0C-0305E82C3301}'
 
 
@@ -47,10 +37,6 @@ base= None
 if system.platform == Win64:
 
 	base=Win64GUI
-
-
-
-
 
 
 
@@ -68,9 +54,6 @@ build_exe_options = {
 
 	'compressed': True
 }
-
-
-
 
 
 
